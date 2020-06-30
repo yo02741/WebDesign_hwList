@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway","Noto Sans TC";
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    perspective: 1500px; 
+
+    background: linear-gradient(#F29FEF,#5F9DE1);
+
+    /* background-image: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url(http://lol-stats.net/uploads/RTcpfEt1aahOxcpQbzNeibOQL34oLJLOtEWDyvmL.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 40% 30%; */
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    /* height: 100vh; */
+
+    margin-left: -250px;
+    transform: rotateY(90deg); 
+
+
+
+    background: rgba(244,244,244,.8);
+    color: #000;
+
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: center left; /* Set the transformed position of sidebar to center left side. */
+
+
+}
+
+
+#sidebar.active {
+    margin-left: 0px;
+    transform: rotateY(0); 
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+
+a, a:hover, a:focus {
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 20px;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: navy;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: navy;
+    background: #fff;
+}
+ul ul a {
+    font-size: 14px !important;
+    padding-left: 40px !important;
+    /* background: #6d7fcc; */
+}
+
+
+.content {
+    width: 100vw;
+    color : white;
+    padding: 50px;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+
+.container-fluid {
+    margin-bottom: 50px;
+}
+
+.btngroup {
+    padding: 0;
+}
+
+.btngroup h2 {
+    position: absolute;
+    top: -5px;
+    left: 30px;
+    color: white;
+    transition: all 1s;
+}
+
+#sidebarCollapse {
+    width: 25px;
+    height: 25px;
+    background: transparent;
+    border: 0;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#sidebarCollapse span {
+    
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: white;
+    transition: all 1s;
+    /* transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375); */
+}
+
+.btngroup:hover  h2{
+    color: #23272B;    
+}
+
+.btngroup:hover  #sidebarCollapse span{
+    background: #23272B;    
+}
+
+
+
+#sidebarCollapse span {
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
+}
+
+
+#sidebarCollapse.active  span:first-of-type  {
+    transform: rotate(45deg) translateY(10px);
+}
+#sidebarCollapse.active span:nth-of-type(2) {
+    opacity: 0;
+}
+#sidebarCollapse.active span:last-of-type {
+    transform: rotate(-45deg) translateY(-10px);
+}
+
+
+
+#sidebarCollapse.active  h4 {
+    position: relative;
+    left: 30px;
+    top: -10px;
+}
+
+.content .title {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 5px;
+}
+
+/* ---------------------- */
+#hwarea .row {
+    margin-bottom: 5vh;
+}
+
+#hwarea img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#hwarea a:hover {
+    text-decoration: none;
+}
+
+#hwarea .area {
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+    transition: all .3s;
+
+    border: 1px solid white;
+
+
+}
+
+#hwarea a:hover .area{
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+
+    border: 5px solid rgba(250, 82, 105,.7);
+    border-radius: 15px;
+}
+
+
+.area {
+    max-width: 95%;
+    height: 60vh;
+    background: rgba(244,244,244,.3);
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px gray;
+}
+
+.area .upper {
+    border-radius: 10px 10px 0 0; 
+    height: 70%;  
+    overflow: hidden;
+}
+
+#hwarea img {
+    width: 100%;
+    border-radius: 10px 10px 0 0; 
+
+}
+
+.area .lower {
+    color: rgb(143, 49, 62);
+}
+
+.area .lower    h3 {
+    padding: 5px 0;
+    margin: 3px 0;
+    text-align: center;
+}
+
+.area .lower    p {
+    text-align: center;
+    margin: 0;
+}
+
+.area svg{
+    position: relative;
+    top: 0  ;
+    margin : 0 10px;
+}
+
